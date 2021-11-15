@@ -665,7 +665,7 @@
             <div v-if="addLessonExamModel">
               <AddNewExam
                 @examAddedSuccessfully="afterExamAdded('addLessonExamModel')"
-                objectType="lesson"
+                objectType="lecture"
                 :objectId="selectedLesson"
                 :addNewExam="addLessonExam"
                 @ifModelClosed="closeAddExam('addLessonExamModel')"
@@ -678,7 +678,7 @@
                 @examUpdatedSuccessfully="
                   afterExamUpdated('lesson', 'lessonUpdateModel')
                 "
-                objectType="lesson"
+                objectType="lecture"
                 :exam="currLessonExam"
                 @ifModelClosed="closeUpdateExam('lessonUpdateModel')"
               />
