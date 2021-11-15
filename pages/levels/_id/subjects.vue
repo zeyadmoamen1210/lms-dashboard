@@ -327,7 +327,7 @@
                   </el-form-item>
                 </div>
 
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                   <h6> {{ $i18n.locale == 'ar' ? 'مُدرس المادة' : 'Subject Teacher' }} </h6>
                   <el-form-item
                     prop="teacher.username"
@@ -351,7 +351,7 @@
                       </template>
                     </el-autocomplete>
                   </el-form-item>
-                </div>
+                </div> -->
 
                 <div class="col-md-1">
                   <h6> {{ $i18n.locale == 'ar' ? 'متاح / غير متاح' : 'Available / Not Available' }} </h6>
@@ -976,24 +976,26 @@ export default {
       formData.append("nameEn", this.addNewSubject.nameEn);
       formData.append("visibility", this.addNewSubject.visibility);
       formData.append("title", this.addNewSubject.title);
-      formData.append("teacher", this.addNewSubject.teacher.id);
+      if(this.addNewSubject.teacher && this.addNewSubject.teacher.id){
+        formData.append("teacher", this.addNewSubject.teacher.id);
+      }
       if (this.photo) {
         formData.append("photo", this.photo);
       }
 
-      if (!this.addNewSubject.teacher.id) {
-        this.$vs.notification({
-          color: "#FA5B5A",
-          position: "top-center",
+      // if (!this.addNewSubject.teacher.id) {
+      //   this.$vs.notification({
+      //     color: "#FA5B5A",
+      //     position: "top-center",
 
-          text:
-            this.$i18n.locale == "ar"
-              ? `هذا المعلم غير موجود`
-              : `This Teacher not Exist`,
-        });
+      //     text:
+      //       this.$i18n.locale == "ar"
+      //         ? `هذا المعلم غير موجود`
+      //         : `This Teacher not Exist`,
+      //   });
 
-        return;
-      }
+      //   return;
+      // }
 
       const loading = this.$vs.loading();
       this.$axios
@@ -1015,7 +1017,10 @@ export default {
           });
 
           this.addSubjectPopup = false;
-          this.addNewSubject = {};
+          this.addNewSubject = {
+            visibility: true,
+        teacher: {},
+          };
           this.getLevelSubjects();
         })
         .catch((err) => {
