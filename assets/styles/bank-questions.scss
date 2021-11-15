@@ -1,0 +1,259 @@
+:root {
+  --filterColor: #F9F9F9;
+  --headingColor: #534DBA;
+  --yellowColor: #FFA400;
+}
+
+@import "_color.scss";
+
+.bank-questions {
+  // Filters Section Style
+  margin: 25px;
+
+  .questions-filters {
+    background-color: var(--filterColor);
+    min-height: calc(100vh - 45px);
+    padding: 20px;
+
+    label,
+    h3 {
+      color: var(--headingColor);
+
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    .question-filter {
+      label {
+        display: block;
+        width: 100%;
+        text-align: start !important;
+      }
+
+      .el-select {
+        width: 100%;
+      }
+    }
+  }
+
+
+  // Questions Section Style
+  .questions-content {
+    min-height: calc(100vh - 45px);
+    padding: 10px 20px 20px;
+    background: #fff;
+
+    label {
+      color: var(--yellowColor);
+      font-weight: bold;
+      margin: 2px 5px 0;
+    }
+
+    .searchInQuestions {
+
+      .el-input {
+        width: auto;
+      }
+    }
+
+    .tabs {
+      min-height: calc(100vh - 135px);
+    }
+  }
+}
+
+
+
+// Global Style For Question Structure Whatever Question Type
+.read-question {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #8c8c8c;
+
+  .question-structure {
+    width: 100%;
+    flex-wrap: nowrap !important;
+
+    .index.question-border-left {
+      border-left: 1px solid #8c8c8c;
+      padding: 35px;
+    }
+
+    .index.question-border-right {
+      border-right: 1px solid #8c8c8c
+    }
+
+    .index {
+      color: var(--yellowColor);
+      font-weight: bold;
+      position: relative;
+
+      h6 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 25px;
+      }
+    }
+
+    .index,
+    .content {
+      padding: 15px;
+    }
+
+    .content {
+      width: 100%;
+
+      .head {
+        h6 {
+          max-width: 500px;
+          line-height: 1.7;
+          font-size: 19px;
+
+        }
+
+        .point {
+          font-size: 17px;
+          color: var(--blue);
+          text-decoration: underline;
+        }
+
+        .question-type {
+          color: var(--yellowColor);
+        }
+
+      }
+
+
+
+
+      .solution {
+        .header {
+          font-weight: bold;
+          color: var(--yellowColor);
+        }
+      }
+
+      .showSolution {
+        .el-button.el-button--text {
+          span {
+            color: var(--yellowColor);
+          }
+        }
+      }
+
+
+
+
+
+    }
+
+    .points {
+      text-decoration: underline;
+      color: var(--blue);
+      font-weight: bold;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    .update-delete-question {
+      button {
+        padding: 1px 15px;
+        border: 1px solid #D8D4D4;
+        border-radius: 3px;
+        box-shadow: none !important;
+        outline: none !important;
+      }
+    }
+  }
+
+
+
+
+}
+
+
+.no-questions-available {
+  position: relative;
+
+  .no-questions-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+
+    .no-files {
+      padding-top: 100px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.read-question .question-structure .index.question-border-right {
+  border-right: 1px solid #8c8c8c;
+  padding: 0 30px;
+}
+
+.el-form.add-question-form .el-upload.el-upload--picture-card {
+  // width: 60% !important;
+  margin: 0 auto;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+}
+
+.el-upload--picture-card:hover,
+.el-upload:focus {
+  border-color: #c0ccda;
+  color: #c0ccda;
+}
+
+element.style {}
+
+
+
+.el-form .el-radio__inner {
+
+}
+
+
+
+.el-form-item__label {
+  text-align: start !important;
+}
+
+.el-form .true-false .el-radio__label {
+  font-size: 18px !important;
+  padding-left: 10px;
+  font-weight: 100;
+  color: #000000 !important;
+}
+
+
+@media (max-width: 768px) {
+
+
+  .read-question .question-structure{
+    flex-wrap: wrap !important;
+  }
+  .read-question .question-structure .index.question-border-left{
+    border: 1px solid #8c8c8c;
+  }
+}
+.add-new-question{
+  .inner-head{
+    >div{
+      div.d-flex{
+        flex-wrap: nowrap !important;
+      }
+    }
+  }
+}

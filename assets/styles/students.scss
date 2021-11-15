@@ -1,0 +1,480 @@
+@import "_color.scss";
+
+.section-students {
+  padding: 15px;
+
+  .btn-org {
+    background-color: $mainColor;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 15px;
+
+    &:hover {
+      box-shadow: none !important;
+    }
+  }
+
+  .btnsecond-org {
+    background-color: $mainColor;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 0px 7px;
+    margin: 0;
+    border-radius: 6px;
+
+    &:hover {
+      box-shadow: none !important;
+    }
+  }
+
+  // .btn {
+  //   font-size: 12px !important;
+  //   font-family: 'Cairo', sans-serif !important;
+  //   font-weight: 600 !important;
+  //   padding: 8px 15px !important;
+
+  //   &.btn-white {
+  //     border: none !important;
+  //   }
+  // }
+
+  .add-student-container {
+    // background: #fff;
+    // box-shadow: 0 0 6px #dddddd;
+    // border-radius: 6px;
+    // border: 1px solid #f3f3f3;
+
+    .add-new-students {
+      padding: 26px 12px 3px;
+      background: #464545;
+      background: #f9f9f9;
+
+      div {
+        &:first-of-type {
+          h5 {
+            color: var(--blue);
+          }
+        }
+      }
+
+      .attach-photo {
+        width: 84px;
+        height: 84px;
+        overflow: hidden;
+        position: relative;
+        margin: auto;
+        padding: 11px;
+        border-radius: 50%;
+        border: 5px #ddd;
+        border-style: double;
+        background: #fff;
+        margin-top: 15px;
+
+        input[type="file"] {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .all-students {
+      padding: 10px;
+    }
+  }
+}
+
+.el-input {
+  .el-input__inner {
+    border-radius: 6px !important;
+    border: 1px solid #B2B2B2 !important;
+
+    &::placeholder {
+      font-size: 12px;
+      font-weight: normal !important;
+      padding: 10px 0;
+    }
+  }
+}
+
+.el-form-item {
+
+
+  .el-select {
+
+
+    .el-input__inner {
+      border-radius: 6px !important;
+      border: 1px solid #B2B2B2 !important;
+
+      &::placeholder {
+        font-size: 12px;
+        font-weight: normal !important;
+        padding: 10px 0;
+      }
+    }
+
+  }
+}
+
+
+.el-input__suffix {
+  z-index: 600;
+  position: absolute;
+  right: auto;
+  left: 20px;
+
+}
+
+
+
+.collapsed-english {
+
+  .el-input__suffix {
+    z-index: 600;
+    position: absolute;
+    right: 30px !important;
+    left: auto !important;
+  }
+}
+
+.el-select-dropdown {
+  position: relative;
+  z-index: 100000000000 !important;
+}
+
+.el-select-dropdown__item {
+  text-align: center;
+  font-family: Cairo;
+  font-size: 12px;
+
+
+  &.selected {
+    background: #FFF3EA !important;
+    color: $mainColor !important;
+
+
+  }
+
+  &.hover {
+    background: rgba($color: $textColor, $alpha: 0.2) !important;
+    color: $mainColor !important;
+  }
+
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+
+  --scrollbarBG: #ffff;
+  --thumbBG: #545185;
+}
+
+.el-scrollbar__wrap::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 6px;
+}
+
+.el-scrollbar__wrap {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  font-family: 'Cairo', sans-serif !important;
+}
+
+.el-scrollbar__wrap::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+
+  border-radius: 6px;
+}
+
+.el-scrollbar__wrap::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+
+  border-radius: 6px;
+  // border: 3px solid var(--scrollbarBG);
+}
+
+.el-table {
+  thead {
+    tr {
+      th {
+        .cell {
+          font-size: 14px;
+          font-family: 'Cairo', sans-serif;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  span {
+    &.edit {
+      color: #534DBA;
+      font-size: 14px;
+      margin: 0 18px;
+    }
+
+    &.delete {
+      color: #FF3636;
+      font-size: 14px;
+    }
+  }
+
+  tbody {
+    tr {
+
+
+      td {
+        height: 38px;
+
+
+        .cell {
+          color: $tabelColor;
+          font-size: 12px;
+          font-family: 'Cairo', sans-serif;
+          font-weight: 600;
+          text-align: center !important;
+
+        }
+      }
+    }
+  }
+}
+
+.btn-success {
+  color: #45D7B6 !important;
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 16px !important;
+  box-shadow: none !important;
+}
+
+.btn-danger {
+  color: #FA5B5A !important;
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 16px !important;
+  box-shadow: none !important;
+}
+
+.buttons-tooltips{
+    display: flex;
+    justify-content: center;
+    .vs-tooltip-content{
+      &:first-of-type{
+        .vs-button__content{
+          padding: 7px 13px !important;
+          img{
+            width: 18px !important;
+          }
+        }
+      }
+    }
+    .vs-button__content{
+      padding: 0;
+      margin: 0;
+    }
+}
+
+.vs-notification__content__text {
+  p {
+    color: #ffffff;
+    font-family: 'Cairo', sans-serif !important;
+    font-weight: 600;
+  }
+}
+
+// .btn {
+//   font-size: 12px !important;
+//   font-family: 'Cairo', sans-serif !important;
+//   font-weight: 600 !important;
+//   padding: 8px 15px !important;
+
+//   &.btn-white {
+//     border: none !important;
+//   }
+// }
+
+.vs-pagination__progress {
+  display: none;
+}
+
+.collapsed-arabic {
+  .prev {
+    i {
+      width: 10px;
+      height: 10px;
+      position: relative;
+      display: block;
+      margin-left: 4px;
+      -webkit-transform: rotate(45deg) scale(0.8) !important;
+      transform: rotate(45deg) scale(0.8) !important;
+    }
+  }
+
+  .next {
+    i {
+      width: 10px;
+      height: 10px;
+      position: relative;
+      display: block;
+      margin-left: 4px;
+      -webkit-transform: rotate(-135deg) scale(0.8) !important;
+      transform: rotate(-135deg) scale(0.8) !important;
+    }
+  }
+}
+
+// .vs-pagination__active {
+//   background-color: #FFFBEF;
+//   color: $mainColor;
+//   box-shadow: none;
+// }
+
+.add-student-page {
+  .bg-white {
+    background-color: #ffffff;
+    width: 100%;
+    min-height: 93vh;
+    box-shadow: 0 0 3px #dddddd;
+    margin: 20px 5px 20px 10px;
+    border-radius: 6px;
+    padding: 30px;
+
+    .header {
+      margin-bottom: 1rem;
+
+      h5 {
+        font-size: 18px !important;
+        font-weight: normal !important;
+        font-family: 'Cairo', sans-serif !important;
+        color: #FFA400;
+
+
+        span {
+          font-size: 20px;
+          // margin: 0 16px;
+        }
+      }
+
+    }
+
+  }
+}
+
+.add-student-page {
+  .filters {
+    .el-select {
+      width: 100%;
+      margin-bottom: 18px;
+    }
+  }
+
+  .add-new-students {
+    .text {
+      color: #343434;
+      font-size: 14px;
+    }
+
+    .relative {
+      position: relative;
+      height: 70vh;
+
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 2px;
+      right: 5px;
+      left: 5px;
+    }
+
+    div {
+      &:first-of-type {
+        h5 {
+          color: var(--blue);
+        }
+      }
+    }
+
+    .el-avatar--large {
+
+      width: 100%;
+      height: 100%;
+
+      cursor: pointer;
+      display: flex;
+      border: 1px solid #707070;
+      align-items: center;
+      justify-content: center;
+
+      background-color: #ffffff;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &.img {
+        padding: 20px;
+
+        img {}
+
+      }
+
+    }
+
+    .attach-photo {
+      width: 140px;
+    height: 140px;
+    overflow: hidden;
+    position: relative;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid #707070;
+    background: #fff;
+    margin-top: 20px;
+    margin: 45px auto;
+
+      input[type="file"] {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+
+      img {
+        width: 100%;
+
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .all-students {
+    padding: 10px;
+  }
+
+  .form-button {}
+}
+
+.el-upload--text {
+  button {
+    &:hover {
+      background: #ffa400;
+      border-color: #ffa400;
+      color: #ffffff;
+    }
+  }
+}
