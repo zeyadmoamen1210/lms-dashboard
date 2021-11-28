@@ -1295,9 +1295,11 @@ export default {
     openExamQuestion(e) {
       // this.showQuestionsOfExam = true;
 
-      this.$router.push(`/exam-details/${e.id}?subject=${this.$route.query.subject}&unit=${this.$route.params.id}&unit_name=${ this.$i18n.locale == 'ar' ? this.unit.nameAr : this.unit.nameEn}&subject_name=${this.unit.subject && this.$i18n.locale == 'ar' ? this.unit.subject.nameAr : this.unit.subject.nameEn }&section=${this.$route.query.section}&class=${this.$route.query.class}&level=${this.$route.query.level}`)
 
-      // this.currExamToAssignQuestions = { ...e };
+
+      this.$router.push(`/exam-details/${e.id}?subject=${this.$route.query.subject}&level=${this.$route.query.level}&subject_name=${this.$route.query.subject_name}&level_name=${this.$route.query.level_name}&exam_name=${e.title}`)
+      // this.$router.push(`/exam-details/${e.id}`)
+        // this.currExamToAssignQuestions = { ...e };
 
       // this.currSubjectExam = { ...e };
       // this.getExamQuestions();

@@ -12,7 +12,7 @@
         </nuxt-link>
       </div>
 
-      <div v-if="$route.query.subject_name" class="divider">
+      <div v-if="$route.query.subject_name && $route.query.lecture_name" class="divider">
         <h6>
           <svg
             xmlns="http://www.w3.org/2000/svg"
