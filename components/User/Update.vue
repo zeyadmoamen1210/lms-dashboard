@@ -83,7 +83,8 @@
                   <vue-phone-number-input
                     @update="updatePhone"
                     v-model="user.phone"
-                    default-country-code="EG"
+                    default-country-code="KW"
+                    :ignoredCountries="['IL']"
                     :translations="
                       $i18n.locale == 'ar'
                         ? {

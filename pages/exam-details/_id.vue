@@ -264,7 +264,7 @@
 
     <section class="tab-2" v-if="active == 3">
       <div class="d-flex mb-3">
-        <div
+        <!-- <div
           class="mr-1 ml-1 mb-1"
           v-if="
             $route.query.subject && !$route.query.lecture
@@ -286,7 +286,7 @@
               </el-option>
             </el-select>
           </div>
-        </div>
+        </div> -->
 
         <div
           class="mr-1 ml-1 mb-1"
@@ -321,7 +321,7 @@
 
     <section class="tab-4" v-if="active == 4">
       <div class="d-flex mb-3" style="gap: 10px">
-        <div
+        <!-- <div
           v-if="
             $route.query.subject && !$route.query.lecture
           "
@@ -342,7 +342,7 @@
               </el-option>
             </el-select>
           </div>
-        </div>
+        </div> -->
 
         <div v-if="$route.query.subject && !$route.query.lecture">
           <div>
@@ -418,6 +418,7 @@ export default {
       this.lessonToAddQuestion = this.$route.query.lecture;
     }
     if (!this.$route.query.lecture) {
+      // this.unitToAddQuestion = this.$route.query.subject;
       this.getLectures();
     }
     // if (this.$route.query.subject) {
@@ -475,7 +476,7 @@ export default {
     },
     getLectures() {
       this.$axios
-        .get(`/subject/${this.unitToAddQuestion}/lecture?paginate=false`)
+        .get(`/subject/${this.unitToAddQuestion ? this.unitToAddQuestion : this.$route.query.subject}/lecture?paginate=false`)
         .then(res => {
           this.lessons = res.data;
         });

@@ -109,14 +109,14 @@
                         </div>
 
 
-                        
+
                   </div>
               </div>
 
               <div class="col-md-9">
                   <NoData v-if="allTeachers.length == 0" />
                   <div class="teachers-section" v-else>
-                      
+
                       <div class="row">
                           <div class="col-md-4" v-for="teacher in allTeachers" :key="teacher.id">
                              <div class="stud">
@@ -218,7 +218,7 @@
 
 
 
-             
+
 
               <el-form-item
                prop="phone"
@@ -233,15 +233,16 @@
                   <vue-phone-number-input
                     @update="updatePhone"
                     v-model="addTeacher.phone"
-                    default-country-code="JO"
-                    
+                    default-country-code="KW"
+                    :ignoredCountries="['IL']"
+
                     />
               </el-form-item>
 
 
                <el-form-item
                     prop="photo"
-                    
+
                 >
                     <el-upload
                     class="upload-demo"
@@ -254,9 +255,9 @@
                     >
                     <el-button size="small" type="primary">Click to upload</el-button>
                     <div slot="tip" class="el-upload__tip">jpg/png files with a size less than 500kb</div>
-                    
 
-                    
+
+
                     </el-upload>
 
                     <vs-avatar v-if="url" size="70">
@@ -380,7 +381,7 @@
                 </el-select>
               </el-form-item>
 
-              
+
 
               <el-form-item>
                 <el-button class="form-button" type="primary" @click="updateTeacherSubject('changeSubject')"
@@ -389,7 +390,7 @@
               </el-form-item>
 
 
-             
+
 
 
             </el-form>
@@ -459,7 +460,7 @@ export default {
     },
     data(){
         return {
-            
+
 
             showAssignedPopup: false,
             subjectVal:'',
@@ -547,7 +548,7 @@ export default {
         changeTeacherSubject(){
             this.openChangeSubject = false;
             const loading = this.$vs.loading();
-            
+
             this.$axios.patch(`/teachers/${this.currTeacher.id}/assign`, {subject: this.changeSubject.subjectVal}).then(res => {
                 this.$message({
                     message: `Subject Assigned To Teacher Successfully!`,
@@ -573,7 +574,7 @@ export default {
         },
 
     addNewTeacher(formName){
-        
+
         this.$refs[formName].validate(valid => {
             if (valid) {
                 this.addTeacherInBackend();
@@ -677,35 +678,35 @@ export default {
             this.isLoading = true;
             this.$axios.get(`/systems?paginate=false`).then(res => {
                 this.systems = res.data;
-                
+
             }).finally(() => this.isLoading = false);
         },
         getLevels(){
             this.isLoading = true;
             this.$axios.get(`/levels?paginate=false`).then(res => {
                 this.levels = res.data;
-                
+
             }).finally(() => this.isLoading = false);
         },
         getClasses(val){
             this.isLoading = true;
             this.$axios.get(`/levels/${val}/classes?paginate=false`).then(res => {
                 this.classes = res.data;
-                
+
             }).finally(() => this.isLoading = false);
         },
         getSections(val){
             this.isLoading = true;
             this.$axios.get(`/classes/${val}/sections?paginate=false${this.systemVal ? '&system='+this.systemVal : ''}`).then(res => {
                 this.sections = res.data;
-                
+
             }).finally(() => this.isLoading = false);
         },
         getSubjects(val){
             this.isLoading = true;
             this.$axios.get(`/sections/${val}/subjects?paginate=false`).then(res => {
                 this.subjects = res.data;
-                
+
             }).finally(() => this.isLoading = false);
         }
     }
@@ -718,13 +719,13 @@ export default {
     label{
         color:#2c4484;
     }
-    
+
     .teachers{
         margin-top: 15px;
         .filters{
         padding: 10px;
         background: #FFF;
-        
+
         .el-select{
             width: 100%;
             margin-bottom: 10px;
@@ -743,7 +744,7 @@ export default {
         }
         .content{
 
-            
+
             h6{
                 &:not(:first-of-type){
                         font-size: 13px;
@@ -760,7 +761,7 @@ export default {
                 background: #2c4484ad;
                 padding: 3px;
                 color: #FFF !important;
-                
+
                 font-weight: bold;
             }
 
@@ -768,7 +769,7 @@ export default {
         }
     }
 
-    
+
 }
 .country-selector__label{
         top:-9px !important;

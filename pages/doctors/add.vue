@@ -154,7 +154,8 @@
                           <vue-phone-number-input
                             @update="updatePhone"
                             v-model="addTeacher.phone"
-                            default-country-code="EG"
+                            default-country-code="KW"
+                            :ignoredCountries="['IL']"
                           />
                         </el-form-item>
                       </div>
